@@ -4,6 +4,7 @@ import hello.hello_spring.domain.Member;
 import hello.hello_spring.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -14,8 +15,14 @@ import static org.junit.jupiter.api.Assertions.*;
 //단축키 MemberService 클래스 이름에서 Ctrl + shift + T
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    MemberService memberService;
     MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+
+    @BeforeEach
+    public void beforeEach() {
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
 
     @AfterEach
     public void afterEach() {
