@@ -9,7 +9,7 @@ public class MemberController {
     private final MemberService memberService;
 
     @Autowired
-    // Fn + alt + insert
+    // 생성자 단축키 Fn + alt + insert
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }
