@@ -25,8 +25,8 @@ public class MemberController {
     }
  */
     //생성자 주입
-    @Autowired
     // 생성자 단축키 Fn + alt + insert
+    @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }
