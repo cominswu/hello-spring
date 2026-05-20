@@ -26,7 +26,7 @@ class MemoryMemberRepositoryTest {
 
         repository.save(member);
 
-        Member result = repository.findByID(member.getId()).get();
+        Member result = repository.findById(member.getId()).get();
         //Assertions.assertEquals(member, result); -> import Junit / 성공 시 정상작동, 실패시 오류
         assertThat(member).isEqualTo(result); // -> import assertj
     }
